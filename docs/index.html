@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_layout-3da70b52.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page-d2b1f89e.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/index-e1bedd54.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-61679329.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-c8a32f33.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-2f20c6ad.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper-b21cceae.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-74bd5374.js">
+		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-8d2a742b.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-685bb7b2.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_page-d9963c6f.js">
+	</head>
+	<body>
+		<div>
+
+
+
+
+
+
+
+
+
+		
+    <script>
+      window.BASE = (() => {
+        const normalised = (location.pathname.endsWith("/") ? location.pathname.substr(0, location.pathname.length -1) : location.pathname).substr(1);
+        const split = normalised.split('/');
+        const sliced = 0 ? split.slice(0, 0) : split;
+        const str = (sliced.length > 0 && sliced[0] !== "") ? "/" + sliced.join('/') : "";
+        return str;
+      })();
+    </script>
+
+    <script>
+      // ensure we save href as they are loaded, so they do not change on page navigation
+      document.querySelectorAll("link[href]").forEach((v) => v.href = v.href);
+    </script>
+<script type="module" data-sveltekit-hydrate="d6tfvz">
+			import { start } from "./_app/immutable/start-61679329.js";
+
+			start({
+				env: {},
+				hydrate: {
+					status: 200,
+					error: null,
+					node_ids: [0, 2],
+					params: {},
+					routeId: "/",
+					data: (function(a){return [a,a]}(null)),
+					form: null
+				},
+				paths: {"base": window.BASE,"assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="d6tfvz"]').parentNode,
+				trailing_slash: "never"
+			});
+		</script>
+	</div>
+	</body>
+</html>
