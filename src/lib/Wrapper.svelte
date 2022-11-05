@@ -1,5 +1,5 @@
 <script>
-	import DirectTag from '$lib/DirectTag.svelte';
+	import NameTag from '$lib/NameTag.svelte';
 	/**
 	 * Also works:
 	 * hbaAsPk0AlmLPFLSNqgH0tk-Z20RL1rOxuXMTuOUTDw
@@ -11,4 +11,4 @@
 	let tag = 'PeerPiper-Web3-Wallet-Connector';
 </script>
 
-<DirectTag {namespace} {tag} on:change />
+<NameTag {namespace} {tag} on:change />

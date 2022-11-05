@@ -86,12 +86,20 @@
 				// props = (await ardag.get({ dagOwner, cid: tagNode.data }))?.value || null;
 
 				// 2. Local heavy approach:
+				// TODO: Cache dagOwner instances in localstorage?
 				const arDagInstance = await ardag.getInstance({
 					dag,
 					dagOwner
 				});
 
 				tagNode = await arDagInstance.latest(tag);
+
+				if (tagNode?.dappowner && tagNode.dappowner !== dagOwner) {
+					console.log("Using another person's app, load it into the dag so the CID is present");
+					await ardag.load({ dagOwner: tagNode.dappowner, dag });
+				}
+
+				// since tagNode.compiled is a CID, we need to get the data from the dag
 				esModule = await getDagData('compiled');
 				props = await getDagData('data');
 
