@@ -1,5 +1,5 @@
 {
-	"name": "@peerpiper/ardag-nametag-loader",
+	"name": "@douganderson444/ardag-nametag-loader",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -40,5 +40,6 @@
 		"@peerpiper/did-ar": "^0.0.14",
 		"@stablelib/base64": "^1.0.1",
 		"@stablelib/sha256": "^1.0.1"
-	}
+	},
+	"homepage": "https://github.com/DougAnderson444/ardag-nametag-loader"
 }
