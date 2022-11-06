@@ -3504,10 +3504,11 @@ function instance$5(o, n, c) {
   const y = createEventDispatcher();
   return onMount(async () => {
     h && async function({ text: $, target: I, props: P }) {
+      y("target", I);
       const L = new Blob([$], { type: "text/javascript" }), q = URL.createObjectURL(L), N = (await import(q)).default;
-      I.innerHTML = "";
+      y("ready", N), I.innerHTML = "";
       const X = new N({ target: I, props: P });
-      q && URL.revokeObjectURL(q), y("ready", N), y("target", I), X.$on("change", (rt) => {
+      q && URL.revokeObjectURL(q), y("mounted", X), X.$on("change", (rt) => {
         y("change", rt);
       });
     }({ text: h, target: u, props: g });
@@ -18959,7 +18960,7 @@ function create_else_block(o) {
   function g(y) {
     return { props: { esModule: y[2], props: y[3] } };
   }
-  return h && (n = construct_svelte_component(h, g(o)), n.$on("change", o[10])), { c() {
+  return h && (n = construct_svelte_component(h, g(o)), n.$on("change", o[12])), { c() {
     n && create_component(n.$$.fragment), c = empty$1();
   }, m(y, $) {
     n && mount_component(n, y, $), insert(y, c, $), u = !0;
@@ -18973,7 +18974,7 @@ function create_else_block(o) {
           destroy_component(P, 1);
         }), check_outros();
       }
-      h ? (n = construct_svelte_component(h, g(y)), n.$on("change", y[10]), create_component(n.$$.fragment), transition_in(n.$$.fragment, 1), mount_component(n, c.parentNode, c)) : n = null;
+      h ? (n = construct_svelte_component(h, g(y)), n.$on("change", y[12]), create_component(n.$$.fragment), transition_in(n.$$.fragment, 1), mount_component(n, c.parentNode, c)) : n = null;
     } else
       h && n.$set(I);
   }, i(y) {
@@ -18986,7 +18987,7 @@ function create_else_block(o) {
 }
 function create_if_block_1(o) {
   let n, c;
-  return n = new Mount({ props: { src: o[2], props: o[3] } }), n.$on("change", o[8]), n.$on("target", o[9]), { c() {
+  return n = new Mount({ props: { src: o[2], props: o[3] } }), n.$on("target", o[8]), n.$on("ready", o[9]), n.$on("mounted", o[10]), n.$on("change", o[11]), { c() {
     create_component(n.$$.fragment);
   }, m(u, h) {
     mount_component(n, u, h), c = !0;
@@ -19070,6 +19071,10 @@ function instance$4(o, n, c) {
   }), o.$$set = (X) => {
     "namespace" in X && c(5, P = X.namespace), "tag" in X && c(6, L = X.tag), "arweave" in X && c(4, q = X.arweave), "arweaveConfig" in X && c(7, N = X.arweaveConfig);
   }, [g, y, $, I, q, P, L, N, function(X) {
+    bubble.call(this, o, X);
+  }, function(X) {
+    bubble.call(this, o, X);
+  }, function(X) {
     bubble.call(this, o, X);
   }, function(X) {
     bubble.call(this, o, X);
