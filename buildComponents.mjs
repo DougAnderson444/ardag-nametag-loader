@@ -12,7 +12,7 @@ import fs from 'fs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const outDir = './src/lib/bundled';
-const components = ['DirectTag.svelte'];
+const components = ['Mount.svelte', 'NameTag.svelte'];
 
 export const buildComponents = async () => {
 	// build the data field app that goes inside the contract data field to reolve the did/tag
