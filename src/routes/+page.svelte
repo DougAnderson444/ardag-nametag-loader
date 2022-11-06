@@ -2,7 +2,7 @@
 	// @ts-nocheck
 
 	import MenuWrapper from '$lib/MenuWrapper.svelte';
-	import DirectTag from '$lib/DirectTag.svelte';
+	import NameTag from '$lib/NameTag.svelte';
 	/**
 	 * Also works:
 	 * hbaAsPk0AlmLPFLSNqgH0tk-Z20RL1rOxuXMTuOUTDw
@@ -19,6 +19,6 @@
 <!-- TODO: Add Menu to allow users to interact with App and Data -->
 
 <MenuWrapper let:handleTarget {namespace} {tag}>
-	<!-- <DirectTag {namespace} {tag} on:target on:change /> -->
-	<div class="m-4 p-4">Menu</div>
+	<NameTag {namespace} {tag} on:target on:change />
+	<!-- <div class="m-4 p-4">Menu</div> -->
 </MenuWrapper>
