@@ -9,7 +9,7 @@
 	import Arweave from 'arweave';
 	import Mount from './Mount.svelte';
 	import { initializeArDag } from '@douganderson444/ardag';
-	import { getArweaveAddress, fromDid, isDID, isAddress, getDagData } from './utils';
+	import { getArweaveAddress, fromDid, isDID, isAddress } from './utils';
 	import { arweaveConfig as config } from './config';
 
 	export let namespace;
@@ -128,7 +128,7 @@
 
 {#if Gateway && (esModule || (props && esModule))}
 	{#if tagNode?.meta?.networkRequired}
-		<Mount src={esModule} {props} on:change on:target />
+		<Mount src={esModule} {props} on:target on:ready on:mounted on:change />
 	{:else}
 		<svelte:component this={Gateway} {esModule} {props} on:change />
 	{/if}
