@@ -21,17 +21,18 @@
 		target: HTMLElement;
 		props: any;
 	}) {
+		dispatch('target', target);
 		const blob = new Blob([text], { type: 'text/javascript' });
 		const url = URL.createObjectURL(blob);
 		const App = (await import(/* @vite-ignore */ url)).default;
+		dispatch('ready', App);
 		target.innerHTML = '';
 		const app = new App({
 			target,
 			props
 		});
 		if (url) URL.revokeObjectURL(url); // memory management
-		dispatch('ready', App);
-		dispatch('target', target);
+		dispatch('mounted', app);
 		app.$on('change', (data: any) => {
 			dispatch('change', data);
 		});
