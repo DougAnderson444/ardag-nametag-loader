@@ -1,7 +1,8 @@
 {
 	"name": "@douganderson444/ardag-nametag-loader",
-	"version": "0.0.1",
-	"private": true,
+	"version": "0.0.2",
+	"module": "index.js",
+	"main": "index.js",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -10,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"ardag:deploy": "ardag-deploy --local"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
@@ -34,7 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@douganderson444/ardag": "file:../ardag",
+		"@douganderson444/ardag": "^0.0.23",
 		"@douganderson444/ipld-car-txs": "^0.0.22",
 		"@douganderson444/svelte-component-gateway": "^0.0.19",
 		"@peerpiper/did-ar": "^0.0.14",
