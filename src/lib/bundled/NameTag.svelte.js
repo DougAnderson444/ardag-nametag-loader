@@ -5,7 +5,7 @@ function _mergeNamespaces(o, n) {
       for (const h in u)
         if (h !== "default" && !(h in o)) {
           const g = Object.getOwnPropertyDescriptor(u, h);
-          g && Object.defineProperty(o, h, g.get ? g : { enumerable: !0, get: () => u[h] });
+          g && Object.defineProperty(o, h, g.get ? g : { enumerable: !0, get: () => u[h] })
         }
     }
   }
