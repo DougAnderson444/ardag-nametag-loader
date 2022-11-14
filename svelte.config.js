@@ -15,7 +15,11 @@ const config = {
 			injectPagesInServiceWorker: true,
 			pages: 'docs',
 			assets: 'docs'
-		})
+		}),
+		paths: {
+			// change below to your repo name
+			base: '/ardag-nametag-loader'
+		}
 	}
 };
 
