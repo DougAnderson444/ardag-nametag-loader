@@ -95,7 +95,7 @@
 				tagNode = await arDagInstance.latest(tag);
 
 				if (tagNode?.dappowner && tagNode.dappowner !== dagOwner) {
-					console.log("Using another person's app, load it into the dag so the CID is present");
+					// console.log("Using another person's app, load it into the dag so the CID is present");
 					await ardag.load({ dagOwner: tagNode.dappowner, dag });
 				}
 
@@ -116,7 +116,6 @@
 					return val;
 				}
 
-				console.log({ esModule, props });
 				// break out of the loop
 				break;
 			} catch (error) {
