@@ -33,8 +33,8 @@
 		});
 		if (url) URL.revokeObjectURL(url); // memory management
 		dispatch('mounted', app);
-		app.$on('change', (data: any) => {
-			dispatch('change', data);
+		app.$on('change', (evt: CustomEvent) => {
+			dispatch('change', evt.detail);
 		});
 		return app;
 	}
