@@ -5,7 +5,10 @@ import type { UserConfig } from 'vite';
 // (async () => await buildComponents())();
 
 const config: UserConfig = {
-	plugins: [sveltekit()]
+	plugins: [sveltekit()],
+	build: {
+		sourcemap: true // Default: false
+	}
 };
 
 export default config;
