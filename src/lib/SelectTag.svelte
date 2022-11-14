@@ -74,7 +74,6 @@
 			// loader[addr] is a promise that resolves to the rootCID
 			const rootCID = await loader[selectedAddr]; // || await ardag.load({ dagOwner: selectedAddr, dag });
 			tagNode = (await dag.get(rootCID, { path: `${selectedTag}/obj/` })).value;
-			console.log({ tagNode });
 		} catch (error) {
 			throw new Error(error);
 		}
@@ -82,7 +81,6 @@
 		try {
 			esModule = await getEsModule(tagNode);
 			props = await getDataProps(tagNode);
-			console.log({ esModule, props });
 		} catch (error) {
 			// if fail, it's possible one owner is using another owner's DAAp, which is not present in their dag, so fetch it
 			if (!tagNode.dappowner)
