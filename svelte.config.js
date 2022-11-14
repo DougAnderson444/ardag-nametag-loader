@@ -1,4 +1,6 @@
-import adapter from 'sveltejs-adapter-ipfs';
+// import adapter from 'sveltejs-adapter-ipfs';
+import adapter from '@sveltejs/adapter-static';
+
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -11,8 +13,8 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			removeBuiltInServiceWorkerRegistration: true,
-			injectPagesInServiceWorker: true,
+			// removeBuiltInServiceWorkerRegistration: true,
+			// injectPagesInServiceWorker: true,
 			pages: 'docs',
 			assets: 'docs'
 		}),
